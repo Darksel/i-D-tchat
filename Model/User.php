@@ -2,6 +2,12 @@
 
 require_once 'Core/Model.php';
 
+/**
+ * Class User
+ * User Model
+ *
+ * @author Joseph Selven
+ */
 class User extends Model
 {
     protected $id;
@@ -91,6 +97,31 @@ class User extends Model
 
         if ($req->rowCount() > 0) {
             return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get User by name
+     *
+     * @param $name
+     *
+     * @return bool|User
+     */
+    public function getByName($name)
+    {
+        $sql = 'SELECT id, name, password FROM user WHERE name = :name';
+
+        $req = self::getDB()->prepare($sql);
+        $req->execute([
+            'name' => $name
+        ]);
+
+        $result = $req->fetch();
+
+        if ($result != false) {
+            return new User($result);
         }
 
         return false;
