@@ -1,0 +1,15 @@
+.margin-bottom-10 {
+    margin-bottom: 10px!important;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+header .btn:first-child {
+    margin-right: 10px;
+}
+
+#main-title {
+    text-align: center;
+}

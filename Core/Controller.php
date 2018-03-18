@@ -7,6 +7,13 @@
  */
 abstract class Controller
 {
+    protected $params = [];
+
+    public function __construct()
+    {
+        $this->params = array_merge($_GET, $_POST);
+    }
+
     public abstract function index();
 
     /**
@@ -42,5 +49,30 @@ abstract class Controller
         ob_end_clean();
 
         return $view;
+    }
+
+    /**
+     * Check if is Post method
+     *
+     * @return bool
+     */
+    protected function isPost()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * redirect in the homepage
+     *
+     * @return void
+     */
+    protected function redirectHomepage()
+    {
+        header("Location: /");
+        exit();
     }
 }
