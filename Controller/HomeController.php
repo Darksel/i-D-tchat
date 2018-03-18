@@ -1,9 +1,15 @@
 <?php
 
-class HomeController
+require_once 'Core/Controller.php';
+
+class HomeController extends Controller
 {
     public function index()
     {
-        var_dump('welcome to index page');
+        $params = [
+          'title' => 'Bienvenue chez I@D tchat'
+        ];
+
+        $this->generateView('/home/index.php', $params);
     }
 }

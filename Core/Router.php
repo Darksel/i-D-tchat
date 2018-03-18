@@ -60,12 +60,12 @@ class Router
     /**
      * Call the action method
      *
-     * @param $controller
+     * @param Controller $controller
      *
      * @return void
      * @throws Exception
      */
-    private function callAction($controller)
+    private function callAction(Controller $controller)
     {
         $action = 'index';
 
