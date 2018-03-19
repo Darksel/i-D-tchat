@@ -12,10 +12,10 @@
         <div class="container">
             <header>
                 <?php if (!$authService->getIsAuth()) { ?>
-                    <a href="/index.php?controller=register"><button type="button" class="btn btn-primary btn-md">Inscription</button></a>
-                    <a href="/index.php?controller=auth"><button type="button" class="btn btn-primary btn-md">Connexion</button></a>
+                    <a href="/index.php?controller=register"><button type="button" class="btn btn-black btn-md">Inscription</button></a>
+                    <a href="/index.php?controller=auth"><button type="button" class="btn btn-black btn-md">Connexion</button></a>
                 <?php } else { ?>
-                    <a href="/index.php?controller=auth&action=disconnect"><button type="button" class="btn btn-primary btn-md">Déconnexion</button></a>
+                    <a href="/index.php?controller=auth&action=disconnect"><button type="button" class="btn btn-black btn-md">Déconnexion</button></a>
                 <?php } ?>
             </header>
             <h1 id="main-title">I@D - Tchat</h1>
@@ -30,7 +30,7 @@
             <?php } else { ?>
                 <form id="post-message" method="post" action="/index.php?controller=message&action=post" class="margin-bottom-10">
                     <input id="content-message" class="form-control col-xs-10" placeholder="votre message" name="content" type="text">
-                    <input class="btn btn-primary col-xs-2" type="submit">
+                    <input class="btn btn-black col-xs-2" type="submit">
                 </form>
             <?php } ?>
 

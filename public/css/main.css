@@ -6,6 +6,18 @@
     border-radius: 0px;
 }
 
+.btn-black {
+    border-color: #000;
+    background-color: #000;
+    color: #FFF;
+}
+
+.btn-black:hover {
+    border-color: #FFF;
+    background-color: #FFF;
+    color: #000;
+}
+
 header .btn:first-child {
     margin-right: 10px;
 }

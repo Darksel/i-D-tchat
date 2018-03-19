@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <header>
-                <a href="/"><button type="button" class="btn btn-primary btn-md">Retour</button></a>
+                <a href="/"><button type="button" class="btn btn-black btn-md">Retour</button></a>
             </header>
 
             <h1 id="main-title">I@D - Message Archivé</h1>

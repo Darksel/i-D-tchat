@@ -83,6 +83,6 @@ class Router
 
     private function displayErrorPage(Exception $e)
     {
-        var_dump($e->getMessage());
+        require_once('View/error.php');
     }
 }

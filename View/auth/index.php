@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <header>
-                <a href="/"><button type="button" class="btn btn-primary btn-md">Retour</button></a>
+                <a href="/"><button type="button" class="btn btn-black btn-md">Retour</button></a>
             </header>
 
             <h1 id="main-title">I@D - Tchat - Connexion</h1>
@@ -27,7 +27,7 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Connexion</button>
+                <button type="submit" class="btn btn-black">Connexion</button>
             </form>
 
             <?php if (!empty($errorMessage)) { ?>
