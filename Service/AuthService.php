@@ -9,6 +9,7 @@
 class AuthService
 {
     protected $isAuth = false;
+    protected $user;
     protected $userModel;
 
     public function __construct()
@@ -19,6 +20,7 @@ class AuthService
 
         if (isset($_SESSION['userId']) && $user = $this->userModel->getById($_SESSION['userId'])) {
             $this->isAuth = true;
+            $this->user = $user;
         }
     }
 

@@ -13,3 +13,30 @@ header .btn:first-child {
 #main-title {
     text-align: center;
 }
+
+#tchat {
+    border: 2px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    height: 500px;
+    overflow: auto;
+}
+
+#tchat > div {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#tchat > div.current-user {
+    border-color: #ccc;
+    background-color: #ddd;
+    text-align: right;
+}
+
+#tchat > div > .user-name {
+    font-weight: bold;
+}
