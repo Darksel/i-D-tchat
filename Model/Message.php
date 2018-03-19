@@ -32,6 +32,13 @@ class Message extends Model
         }
     }
 
+    /**
+     * Get all messages
+     *
+     * @param null $limit
+     *
+     * @return array
+     */
     public function getAll($limit = NULL)
     {
         $sql = 'SELECT message.id AS id, content, user_id, name FROM message
@@ -52,6 +59,26 @@ class Message extends Model
         return $messages;
     }
 
+    /**
+     * save message in the database
+     *
+     * @param $userId
+     * @param $content
+     *
+     * @return string
+     */
+    public function save($userId, $content)
+    {
+        $sql = 'INSERT INTO message(user_id, content) VALUES(:user_id, :content)';
+
+        $req = self::getDB()->prepare($sql);
+        $req->execute([
+            'user_id' => $userId,
+            'content' => $content
+        ]);
+
+        return self::getDB()->lastInsertId();
+    }
     /**
      * @return mixed
      */

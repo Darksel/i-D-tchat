@@ -40,3 +40,14 @@ header .btn:first-child {
 #tchat > div > .user-name {
     font-weight: bold;
 }
+
+
+#post-message input {
+    border-radius: 0px;
+}
+
+#post-message input[name="content"] {
+    width: 83.33333333%;
+    height: 35px;
+    text-align: right;
+}

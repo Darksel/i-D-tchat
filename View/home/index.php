@@ -24,9 +24,21 @@
             </div>
 
             <div class="clearfix"></div>
+
+            <?php if (!$authService->getIsAuth()) { ?>
+                <div class="alert alert-danger" role="alert">Vous devez être connecté si vous voulez tchater</div>
+            <?php } else { ?>
+                <form id="post-message" method="post" action="/index.php?controller=message&action=post" class="margin-bottom-10">
+                    <input id="content-message" class="form-control col-xs-10" placeholder="votre message" name="content" type="text">
+                    <input class="btn btn-primary col-xs-2" type="submit">
+                </form>
+            <?php } ?>
+
         </div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../../public/js/app.js"></script>
     </body>
 </html>
 

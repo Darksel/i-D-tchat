@@ -66,6 +66,20 @@ abstract class Controller
     }
 
     /**
+     * Check if is ajax request
+     *
+     * @return bool
+     */
+    protected function isAjax()
+    {
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * redirect in the homepage
      *
      * @return void
