@@ -23,7 +23,7 @@ header .btn:first-child {
     overflow: auto;
 }
 
-#tchat > div {
+#tchat > div, #archived-message > div {
     border: 2px solid #dedede;
     background-color: #f1f1f1;
     border-radius: 5px;
@@ -31,13 +31,13 @@ header .btn:first-child {
     margin: 10px 0;
 }
 
-#tchat > div.current-user {
+#tchat > div.current-user, #archived-message > div.current-user {
     border-color: #ccc;
     background-color: #ddd;
     text-align: right;
 }
 
-#tchat > div > .user-name {
+#tchat > div > .user-name, #archived-message > div > .user-name {
     font-weight: bold;
 }
 

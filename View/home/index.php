@@ -34,6 +34,9 @@
                 </form>
             <?php } ?>
 
+            <div class="clearfix"></div>
+
+            <a href="/index.php?controller=message"><button type="button" class="btn btn-secondary pull-right">Messages Archivés</button></a>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -19,9 +19,22 @@ class MessageController extends Controller
 
     public function index()
     {
-        // TODO
+        $messages = $this->messageModel->getAll();
+
+        $params = [
+            'authService' => $this->authService,
+            'messages' => $messages,
+        ];
+
+        $this->generateView('message/index.php', $params);
     }
 
+    /**
+     * Save message content
+     * Only if user is connected and if ajax request
+     *
+     * @return void
+     */
     public function post()
     {
         if ($this->authService->getIsAuth() && $this->isAjax()) {
@@ -56,6 +69,12 @@ class MessageController extends Controller
         $this->redirectHomepage();
     }
 
+    /**
+     * Refreshing Page
+     * Only if ajax request
+     *
+     * @return void
+     */
     public function refresh()
     {
         if ($this->isAjax()) {
