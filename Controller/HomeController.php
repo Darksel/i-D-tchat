@@ -25,7 +25,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $messages = $this->messageModel->getAll(50);
+        $messages = $this->messageModel->getTchatMessages();
 
         $params = [
             'authService' => $this->authService,

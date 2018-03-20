@@ -45,7 +45,7 @@ class MessageController extends Controller
 
                 $this->messageModel->save($this->authService->getUser()->getId(), $content);
 
-                $messages = $this->messageModel->getAll(50);
+                $messages = $this->messageModel->getTchatMessages();
                 $params = [
                     'authService' => $this->authService,
                     'messages' => $messages,
@@ -80,7 +80,7 @@ class MessageController extends Controller
         if ($this->isAjax()) {
             header('Content-Type: application/json');
 
-            $messages = $this->messageModel->getAll();
+            $messages = $this->messageModel->getTchatMessages();
             $params = [
                 'authService' => $this->authService,
                 'messages' => $messages,

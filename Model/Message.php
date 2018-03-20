@@ -35,19 +35,13 @@ class Message extends Model
     /**
      * Get all messages
      *
-     * @param null $limit
-     *
      * @return array
      */
-    public function getAll($limit = NULL)
+    public function getAll()
     {
         $sql = 'SELECT message.id AS id, content, user_id, name FROM message
                 INNER JOIN user ON message.user_id = user.id
                 GROUP BY message.id';
-
-        if (!is_null($limit) && is_int($limit)) {
-            $sql .= ' LIMIT ' . $limit;
-        }
 
         $results = self::getDB()->query($sql);
         $messages = [];
@@ -79,6 +73,32 @@ class Message extends Model
 
         return self::getDB()->lastInsertId();
     }
+
+    /**
+     * Get tchat messages, select only 50 last row
+     *
+     * @return array
+     */
+    public function getTchatMessages()
+    {
+        $sql = 'SELECT * FROM (
+                    SELECT message.id AS id, content, user_id, name FROM message
+                    INNER JOIN user ON message.user_id = user.id
+                    GROUP BY message.id
+                    ORDER BY id DESC
+                    LIMIT 50
+                ) sub ORDER BY id ';
+
+        $results = self::getDB()->query($sql);
+        $messages = [];
+
+        foreach ($results as $data) {
+            $messages[] = new Message($data);
+        }
+
+        return $messages;
+    }
+
     /**
      * @return mixed
      */
